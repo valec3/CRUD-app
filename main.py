@@ -1,18 +1,13 @@
-import peopleData as perDt
+from empleado import Empleado
+from peopleData import save, find_all_records, search_dni, update_data
 
-class Empleado:
-    def __init__(self, id_empleado = None,nombre = None, apellido=None, dni=None, fecha_nacimiento=None, fecha_ingreso=None, activo=None):
-        self.id_empleado = id_empleado
-        self.nombre = nombre
-        self.apellido=apellido,
-        self.dni=dni,
-        self.fecha_nacimiento=fecha_nacimiento,
-        self.fecha_ingreso=fecha_ingreso,
-        self.activo=activo
+# res=save(juan)
+# print(res)
+# res=find_all_records()
+# for i in res.get("data"):
+#     print(i)
 
-juan    = Empleado(1,"Juan","Perez","12345678","01/01/1990","01/01/2010",1)
-
-
-res = perDt.save(juan)
-
+juan = Empleado(2, "Pedro", "manfred", "12345678", "01/01/1990", "01/01/2010", 1)
+res = update_data(juan)
 print(res)
+# print(res["data"].__dict__.values())
